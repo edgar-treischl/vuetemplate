@@ -1,9 +1,10 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from './components/Navbar.vue';
 </script>
 
 <template>
   <v-app>
+     <Navbar />
     <v-main>
       <v-container class="pa-8">
         <v-card elevation="6" class="mx-auto my-12" max-width="800">
