@@ -4,8 +4,7 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [vue()],
-  // For GitHub Pages deployment
-  base: process.env.VITE_BASE_URL || '/vuetemplate/',
+  base: process.env.VITE_BASE_URL || '/vuetemplate/',  // fallback ensures deploy never breaks
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

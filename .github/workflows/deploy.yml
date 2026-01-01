@@ -1,12 +1,12 @@
-name: Deploy Vue Vite App to GitHub Pages
+name: Deploy Vue.js Vuetify App to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - main  # Trigger deploy on pushes to main
 
 permissions:
-  contents: write  # Allows pushing to gh-pages branch
+  contents: write  # Needed to push to gh-pages
 
 jobs:
   deploy:
@@ -23,27 +23,28 @@ jobs:
         with:
           node-version: 20
 
-      # 3️⃣ Install dependencies
+      # 3️⃣ Install dependencies using Yarn
       - name: Install dependencies
         run: yarn install
 
-      # 4️⃣ Build the app
+      # 4️⃣ Build the Vue app with the correct base for GitHub Pages
       - name: Build Vue app
         env:
-          VITE_BASE_URL: /vuetemplate/   # Replace with your repo name if needed
+          VITE_BASE_URL: /vuetemplate/   # <-- must match your repo name
         run: yarn build
 
-      # 5️⃣ SPA fallback (for Vue Router history mode)
-      - name: Copy index.html to 404.html
+      # 5️⃣ SPA fallback for Vue Router (so refresh works)
+      - name: SPA fallback
         run: cp dist/index.html dist/404.html
 
-      # 6️⃣ Disable Jekyll on GitHub Pages
+      # 6️⃣ Disable Jekyll
       - name: Disable Jekyll
         run: touch dist/.nojekyll
 
-      # 7️⃣ Deploy to GitHub Pages
+      # 7️⃣ Deploy to GitHub Pages (force push all files)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          force_orphan: true   # <-- ensures gh-pages updates even if files appear unchanged
