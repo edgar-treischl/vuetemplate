@@ -4,21 +4,12 @@
 
 This repository serves as a foundation for future projects. Clone it, update the content, and deploy quickly without reconfiguring the basics.
 
----
 
-## Table of Contents
 
-- Project Structure
-- Getting Started
-- Available Scripts
-- Deployment
-- Customization
-- Useful Links
-
----
 
 ## Project Structure
 
+```
 src/
 ├─ assets/          # Images, icons, etc.
 ├─ components/      # Reusable Vue components (Navbar, etc.)
@@ -29,32 +20,13 @@ src/
 │   └─ index.js     # Vue Router configuration
 └─ App.vue          # Main layout component
 vite.config.js      # Vite configuration
+```
+
 
 - **App.vue**: Provides the main layout, includes Navbar, and renders `<router-view>` for pages.  
 - **Home.vue**: Contains the start page content, project info, and template instructions.  
 
----
 
-## Getting Started
-
-1. Clone the repository:
-
-git clone https://github.com/edgar-treischl/vuetemplate.git
-cd vuetemplate
-
-2. Install dependencies using Yarn:
-
-yarn install
-
-3. Start the development server:
-
-yarn dev
-
-4. Open the browser:
-
-http://localhost:5173/
-
----
 
 ## Available Scripts
 
@@ -64,7 +36,7 @@ yarn dev         | Run the project locally in development mode.
 yarn build       | Build the project for production.
 yarn preview     | Preview the production build locally.
 
----
+
 
 ## Deployment
 
@@ -91,7 +63,6 @@ https://edgar-treischl.github.io/vuetemplate/
 
 3. SPA routing is supported via copying `index.html` to `404.html` in the workflow.
 
----
 
 ## Customization
 
@@ -101,7 +72,7 @@ https://edgar-treischl.github.io/vuetemplate/
 - Modify Vuetify theme in `src/plugins/vuetify.js`.  
 - Update Navbar links in `src/components/Navbar.vue`.
 
----
+
 
 ## Useful Links
 
@@ -109,6 +80,5 @@ https://edgar-treischl.github.io/vuetemplate/
 - Vuetify Documentation: https://vuetifyjs.com/  
 - Vue 3 Documentation: https://vuejs.org/  
 
----
 
 🎯 This template is designed to help me quickly start new Vue 3 + Vuetify projects with CI/CD setup for GitHub Pages. Copy, modify, and deploy as needed!
