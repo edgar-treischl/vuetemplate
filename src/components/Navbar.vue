@@ -64,7 +64,7 @@ const logoSrc = import.meta.env.BASE_URL + 'images/vite.svg'
 
 // Navigation items
 const navItems = [
-  { label: 'Add Page', to: '/about', icon: 'mdi-information' },
+  { label: 'Home Page', to: '/about', icon: 'mdi-information' },
 ]
 </script>
 
