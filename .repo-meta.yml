@@ -1,0 +1,21 @@
+name: Vue Template Repo
+description: Vue Template Repo
+dev_path: templates
+status: experimental
+role: project
+tags:
+  - frontend
+language: JS
+setup:
+  - pip install -e .
+  - pre-commit install
+env:
+  - .env.example
+services:
+  - postgres
+  - redis
+depends_on:
+  - my-core-lib
+workspace: []
+update_strategy: []
+priority: []
